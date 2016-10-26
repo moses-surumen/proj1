@@ -1,6 +1,6 @@
 class PokemonsController < ApplicationController
   # before_action :set_pokemon, only: [:show, :edit, :update, :destroy]
-  before_action only: [:capture]
+  # before_action only: [:capture, :damage, :heal, :new]
 
   # # PATCH/PUT /pokemons/1
   # # PATCH/PUT /pokemons/1.json
@@ -22,18 +22,14 @@ class PokemonsController < ApplicationController
   # # PATCH/PUT /pokemons/1
   # # PATCH/PUT /pokemons/1.json
   def heal
-    @pokemon = Pokemon.find(params[:id])
-    @pokemon.trainer = current_trainer
-    @pokemon.health += 10     #reduce health by 10
+    self.health += 10     #reduce health by 10
     redirect_to '/'
   end
 
 
   # GET /pokemons/new
-  def new
-    @name = params[:name]
-    @level = params[:level]
-    @health = params[:health]
+  def create
+    render 'new.html.erb'
   end
 
   # # GET /pokemons
