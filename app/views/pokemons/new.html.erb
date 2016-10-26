@@ -1,0 +1,10 @@
+<h1>New Pokemon</h1>
+
+<%= render 'form' %>
+<%= simple_form_for @pokemons do |f| %>
+	<%= f.input :name %>
+	<%= f.input :level %>
+	<%= f.input :health %>
+	<%= f.button :submit %>
+<% end %>
+<%= link_to 'Back', pokemons_path %>

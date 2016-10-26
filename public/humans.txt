@@ -3,7 +3,7 @@
 
 
 /* TEAM */
-  <your title>: <your name>
+  <your title>: Moses Surumen
   Site:
   Twitter:
   Location:
