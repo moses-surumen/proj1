@@ -1,12 +1,24 @@
 <%# navigation styled for Zurb Foundation 5 %>
-<nav class="top-bar" data-topbar>
-  <ul class="title-area">
-    <li class="name"><%= link_to 'PokePortal Home', root_path %></li>
-    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-  </ul>
-  <div class="top-bar-section">
-    <ul class="right">
-      <%= render 'layouts/navigation_links' %>
-    </ul>
-  </div>
+<nav class="header nav active">
+	<%= link_to 'PokePortal Home', root_path %>
 </nav>
+
+<!-- <div class="logo">
+            		<a href="/#" class="logo-link">
+            			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="38" height="28" viewBox="0 0 38 28">
+            			  <defs>
+            			    <style>
+            			      .cls-1 {
+            			        fill: #33afff;
+            			        fill-rule: evenodd;
+            			      }
+            			    </style>
+            			  </defs>
+            			  <path d="M28.375,26.781 L28.375,27.000 L13.969,27.000 L13.969,26.999 C13.963,26.999 13.958,27.000 13.953,27.000 C6.799,27.000 1.000,21.180 1.000,14.000 C1.000,6.820 6.799,1.000 13.953,1.000 C17.920,1.000 21.465,2.794 23.841,5.612 C24.602,5.441 25.391,5.344 26.203,5.344 C32.166,5.344 37.000,10.192 37.000,16.172 C37.000,21.406 33.297,25.772 28.375,26.781 Z" class="cls-1"/>
+            			</svg>
+
+            		</a>
+            	</div> -->
+<div class="right">
+	<%= render 'layouts/navigation_links' %>
+</div>

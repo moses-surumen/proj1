@@ -10,13 +10,32 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <body class="home" style="background-color: #fff !important;font-family: font-family: 'CircularStd-Book' sans-serif !important;">
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-    <main role="main">
+    <main role="main" class="page home" style="background-color: #fff !important; font-family: CircularStd-Book, sans-serif !important;">
        <%= render 'layouts/messages' %>
        <%= yield %>
     </main>
+    <div class="footerWrapper" style="background-color: #fff !important;">
+      <footer>
+        <section class="desktop">
+          <div>
+            <p>Fall 2016 © Moses Surumen. Rails Decal.</p>
+          </div>
+          <div>
+            <ul>
+            <li><a href="http://www.mosessurumen.com/">Contact</a></li>
+                      <li><a href="https://github.com/moses-surumen">Github</a></li>
+                      <li><a target="_blank" href="#">Facebook</a></li>
+                      <li><a href="https://www.linkedin.com/in/mosessurumen">LinkedIn</a></li>
+            </ul>
+          </div>
+        </section>
+
+      </footer>
+  </div>
+
   </body>
 </html>

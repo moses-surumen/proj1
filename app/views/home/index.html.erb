@@ -1,16 +1,36 @@
-<h3>Welcome to PokePortal</h3>
-<p><%= link_to 'Trainers:', trainers_path %> <%= Trainer.count %> registered</p>
+<div class="page home">
+          <div class="pageWrapper">
+            <div class="centeredContainer">
+              <div class="catchZone">
+                <div class="hello">
+                <span id="intro">
+                  <p class="typewriter" style="font-size: 100px; font-weight: bold;"><font style="color: #e8c060">W</font><font style="color: #ea9078">e</font><font style="color: #65c3ad">l</font><font style="color: #65c3ad">c</font><font style="color: #dc6b6b">o</font><font style="color: #ea9078">m</font><font style="color: #e8c060">e</font>
+                  </p></span>
+
+                  <div class="catchPhrase">
+                      <p>
+                          <%= link_to 'Trainers:', trainers_path %> <%= Trainer.count %> registered
+                      </p>
+                  </div>
+                </div>
+              </div>
+    </div>
+  </div>
+</div>
+<!-- END OF DASHBOARD -->
+
+
 
 <% if @pokemon and current_trainer %>
-  <p> A wild <%= @pokemon.name %> has appeared!</p>
-  <!-- REPLACE THIS LINE BELOW -->
-  <p><%= @trainer %> These are your pokemons dude</p>
-  <p>Name: <%= @pokemon.name %></p>
-  <p>Level: <%= @pokemon.level %></p>
-  <p>Health: <%= @pokemon.health %></p>
-  
-  <%= button_to "Create New Pokemon!", create_pokemon_path, :class => "button medium"%>
-  <%= button_to "Throw a Pokeball!", capture_path(id: @pokemon), :class => "button medium", :method => :patch %>
-  <%= button_to "Damage the Pokeball!", damage_path(id: @pokemon), :class => "button medium", :method => :patch %>
-  <%= button_to "Heal Pokemon!", heal_path(id: @pokemon), :class => "button medium", :method => :patch %>
+    <p> A wild <%= @pokemon.name %> has appeared!</p>
+    <!-- REPLACE THIS LINE BELOW -->
+    <p><%= @trainer %> These are your pokemons dude</p>
+    <p>Name: <%= @pokemon.name %></p>
+    <p>Level: <%= @pokemon.level %></p>
+    <p>Health: <%= @pokemon.health %></p>
+    
+    <%= button_to "Create New Pokemon!", create_pokemon_path, :class => "button medium", :method => :patch %>
+    <%= button_to "Throw a Pokeball!", capture_path(id: @pokemon), :class => "button medium", :method => :patch %>
+    <%= button_to "Damage the Pokeball!", damage_path(id: @pokemon), :class => "button medium", :method => :post %>
+    <%= button_to "Heal Pokemon!", heal_path(id: @pokemon), :class => "button medium", :method => :post %>
 <% end %>

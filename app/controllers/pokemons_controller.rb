@@ -10,19 +10,19 @@ class PokemonsController < ApplicationController
     redirect_to '/'
   end
 
-  # # PATCH/PUT /pokemons/1
-  # # PATCH/PUT /pokemons/1.json
+  
   def damage
     @pokemon = Pokemon.find(params[:id])
-    @pokemon.trainer = current_trainer
-    @pokemon.health -= 10     #reduce health by 10
+    @pokemon.trainer = current_trainer    
+    @pokemon.decrement(:health, 10)
     redirect_to '/'
   end
 
-  # # PATCH/PUT /pokemons/1
-  # # PATCH/PUT /pokemons/1.json
-  def heal
-    self.health += 10     #reduce health by 10
+  
+  def heal   
+    @pokemon = Pokemon.find(params[:id])
+    @pokemon.trainer = current_trainer 
+    @pokemon.increment(:health, 10)
     redirect_to '/'
   end
 
@@ -97,8 +97,8 @@ class PokemonsController < ApplicationController
   #     @pokemon = Pokemon.find(params[:id])
   #   end
 
-  #   # Never trust parameters from the scary internet, only allow the white list through.
-  #   def pokemon_params
-  #     params.require(:pokemon).permit(:name, :level, :trainer_id)
-  #   end
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def pokemon_params
+      params.require(:pokemon).permit(:name, :level, :trainer_id)
+    end
 end
